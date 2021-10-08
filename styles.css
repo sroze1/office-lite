@@ -1,0 +1,32 @@
+:root { 
+    --blue-1: rgb(81,117,255);
+    --blue-2: rgb(130, 156, 255);
+
+    --dark-1: rgb(51,57,80);
+    --dark-2: rgb(37,41,58);
+
+    --light-1: rgb(116, 123, 149);
+    --light-2: rgb(240,91,91);
+}
+
+*
+*::before,
+::after {
+    box-sizing: border-box;
+ }
+
+body { 
+    font-family: 'Kumbh Sans', sans-serif;
+    line-height: 1.6;
+}
+
+.container { 
+    padding: 1.6rem;
+    text-align: center;
+}
+
+
+
+
+
+
