@@ -1,12 +1,22 @@
 :root { 
     --blue-1: rgb(81,117,255);
     --blue-2: rgb(130, 156, 255);
+    --blue-3: rgb(229,234,253);
+    --blue-4: #b5c2f5;
 
     --dark-1: rgb(51,57,80);
     --dark-2: rgb(37,41,58);
 
     --light-1: rgb(116, 123, 149);
     --light-2: rgb(240,91,91);
+
+    --bg-main: #f2f2f2; 
+
+    --fs-plan-h1-: clamp(3.7rem, 6vw + 0.5rem, 5rem);
+    --fs-h1-: clamp(2.5rem, 3vw + 0.5rem, 4rem);
+    --fs-article: clamp(1rem, 3vw + 0.1rem, 1.2rem);
+    --fs-h3-:
+    --fs-button-: 
 }
 
 *
@@ -15,18 +25,313 @@
     box-sizing: border-box;
  }
 
+
+ /*TYPOGRAPHY*/
+h1 { 
+    font-size: var(--fs-h1-);
+}
+
+h1, h2{ 
+    color: var(--dark-1);
+}
+
+.plan h1 { 
+    font-size: var(--fs-plan-h1-);
+    font-weight: 700;
+}
+
+article { 
+    color: var(--light-1);
+    font-weight: 200;
+    font-size: var(--fs-article);
+    line-height: 2rem;
+}
+
+h3 { 
+    color: var(--dark-1);
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+/**/
+
+
+
+
+
+
+
 body { 
     font-family: 'Kumbh Sans', sans-serif;
-    line-height: 1.6;
+    background-color: var(--bg-main);
 }
 
 .container { 
-    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    min-width: 70%;
+
     text-align: center;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+
+/*HEADER */
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+
+    background: url("assets/home/bg-pattern-header.svg");
+    background-size: contain;
+    background-position: center;
+    width: 85%;
+    padding-top: 5em;
+}
+
+.image1 { 
+    align-self: center;
+    max-width:  350px;
+    order: 1;
+}
+
+.image2 { 
+    align-self: center;
+    max-width: 230px;
+    order: 2;
+}
+
+.intro { 
+    order: 3;
+}
+
+/*MEDIA QUERIES FOR HEADER*/
+    @media (min-width: 768px) { 
+        .header { 
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto;
+        }
+
+        .image1 { 
+            order: 1;
+            grid-column: span 2;
+        }
+
+        .intro { 
+            order: 2;
+        }
+
+        .image2 { 
+            order: 3;
+            justify-content: center;
+            max-width: 300px;
+        }
+}
+
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PRICING PLAN*/
+.pricing { 
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.plan { 
+    background-color: white;
+    border-radius: 15px;
+
+    width: 80%;
+    padding: 2rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.plan2 { 
+    background-color:var(--blue-1);
+    background-image: url(assets/home/bg-pattern-pricing.svg);
+    background-size: cover;
+    background-position: center;
+}
+
+.plan2 h1,
+.plan2 h2,
+.plan2 h3,
+.plan2 article{
+    color: white;
+}
+
+.plan section { 
+    line-height: 1rem;
+}
+
+
+/*PLAN MEDIA QUERIES TAB*/
+@media (min-width: 768px) { 
+    .container { 
+        text-align: start;
+    }
+
+    /* .pricing { 
+        flex-direction: column;
+    } */
+    .plan { 
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3em;
+    }
+
+    .plan article { 
+        align-self: end;
+    }
+}
+/*PLAN MEDIA QUERIES DESKTOP*/
+@media (min-width: 1440px) { 
+   .pricing { 
+       display: flex;
+       flex-direction: row;
+       width: 85%;
+       gap: 1em;
+   }
+
+   .plan { 
+    text-align: center;
+    justify-content: center;
+   }
+
+   .plan article { 
+       margin: 0;
+   }
 }
 
 
 
 
+
+
+
+
+
+
+
+/*BUTTONS*/
+button { 
+    border-radius: 3rem;
+    border-color: transparent;
+    padding: 1rem;
+    width: 10rem;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.button1 { 
+    color: white;
+    background-color: var(--blue-1);
+    margin: 1.5rem 0rem;
+}
+
+.button1:hover { 
+    background-color: var(--blue-2);
+}
+
+.button2 { 
+    color: var(--blue-1);
+    background-color: var(--blue-3);
+}
+
+.button2:hover { 
+    background-color: var(--blue-4);
+}
+
+
+.button3 { 
+    color: var(--blue-1);
+}
+
+.button3:hover { 
+    color: var(--blue-2);
+}
+
+/**/
+
+
+
+/*FOOTER*/
+footer { 
+    background-color: var(--dark-2);
+    min-width: 100%;
+    padding: 3rem;
+}
+
+footer section { 
+    display: grid;
+    grid-template-columns: repeat(4, minmax(auto, auto));
+    padding: 1rem;
+    gap: 1rem;
+}
+
+footer article { 
+    background-color: var(--dark-1);
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+footer .countdown { 
+    color: #f2f2f2;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+@media(min-width: 768px) {
+    footer .countdown { 
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    footer { 
+        text-align: center;
+    }
+}
+
+footer h3 { 
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+}
+
+footer h3 .release-date { 
+    color: var(--blue-1);
+}
+
+
+
+/**/
 
 
